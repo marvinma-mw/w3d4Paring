@@ -29,19 +29,26 @@ console.log(timeoutObjs); // [ Timeout {...},  Timeout {...}, Timeout {...} ]
 ***********************************************************************/
 
 function batchTimeouts(cb,delays){
+  arrCB = [];
+  arrDelays = [];
   for(let i=0;i<delays.length;i++){
     let time=delays[i];
-    delays.push(time)
+    arrDelays.push(time)
     for(let j=0;j<cb.length;j++){
       let obj=cb[j];
-      cb.push(obj)
-    if(cb=delays){
-      setTimeout(()=>{cb},delays)
+      arrCb.push(obj)
+    if(arrCb=arrDelays){
+      setTimeout(cb, delays)
     }
   }
   }
 }
 
+// function batchTimeouts(tasks, delays) {
+//   return tasks.map((func, i)  => {
+//     return setTimeout(func, delays[i])
+//   })
+// }
 
 
 
