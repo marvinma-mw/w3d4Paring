@@ -8,8 +8,8 @@ in *seconds*. The function should set a timeout on the given callback for
 the specified amount of time. Feel free to use the built-in `setTimeout`
 in your implementation.
 
-In addition to Mocha, we recommend that you test your code manually using 
-node with the examples below. Use the command 
+In addition to Mocha, we recommend that you test your code manually using
+node with the examples below. Use the command
 `node problems/01-set-seconds-timeout.js`
 
 Examples:
@@ -22,6 +22,15 @@ setSecondsTimeout(function () {
     console.log('world');
 }, 1.4); // should print 'world' after 1400 milliseconds
 ***********************************************************************/
+
+// write a function called setSecondTimeout that take a callback, we named the delay secs
+// in that of that function - put the setTimeOut with the callback
+// second function: convert the milliseconds to seconds
+
+function setSecondsTimeout(cb,seconds){
+  let multiple=1000;
+  setTimeout(cb,seconds*multiple)
+}
 
 
 
